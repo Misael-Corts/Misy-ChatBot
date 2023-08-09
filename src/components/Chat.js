@@ -1,7 +1,6 @@
 'use client' //para que no sea procesada en el servidor
 import { useState } from "react"
 import styles from '@/styles/chat.module.css'
-import Link from 'next/link'
 
 
 export default function Chat () {
@@ -63,13 +62,6 @@ export default function Chat () {
           </p>
         )}
       </form>
-
- <Link href='/Afirmaciones'>Go to afirmaciones</Link>
- <Link href='/DiarioGratitud'>Go to DiarioGratitud</Link>
- <Link href='/EspacioRelajacion'>Go to EspacioRelajacion</Link>
- <Link href='/RegistroEmocional'>Go to Registro Emocional</Link>
-
-
     </div> 
  )  
 }

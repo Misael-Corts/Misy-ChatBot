@@ -3,9 +3,9 @@ import Chat from "@/components/Chat";
 
 
 function HomePage () {
-  return(
+  return(<>
     <Chat />
-  )
+  </>)
 }
 
 export default HomePage
