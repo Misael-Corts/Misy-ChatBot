@@ -40,32 +40,45 @@ export default function Chat () {
  return (
  <div className={styles.main}>
 
-      <form onSubmit={onSubmit} className={styles.container} >
+
+
+ <div className={styles.chatContainer}>
+
+ 
+    {result && (
+          <p className="text-xl font-bold text-white max-w-xs my-10">
+            {result}
+          </p>
+        )}
+
+      <form onSubmit={onSubmit} className={styles.formContainer} >
 
  {result && (
           <p className="text-xl font-bold text-white max-w-xs my-10">
             {result}
           </p>
         )}
+
       <div className={styles.messageContainer}>
 
-      
+      </div> 
       <input
           type="text"
           name="mensaje"
           placeholder="Escriba su mensaje"
           onChange={(e) => setPrompt(e.target.value)}
-          className="p-2 rounded-md block bg-neutral-700 text-white w-full"
+          className={styles.input}
           value={prompt}
           autoFocus
         />
 
-        <button type="submit" className="bg-green-500 p-2 rounded-md block mt-2 disabled:opacity-50 text-white" disabled={!prompt || loading}>
+        <button type="submit" className={styles.sendButton} disabled={!prompt || loading}>
           Enviar
         </button>
-</div>
-       
       </form>
+      
+      </div>
     </div> 
+    
  )  
 }
