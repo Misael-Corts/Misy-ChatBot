@@ -1,4 +1,42 @@
-.title{
-    font-size: 60px;
-    color: white;
+
+.title {
+  color: #000;
+  text-align: center;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
 }
+
+/* Estilos para el calendario */
+.customCalendar {
+    background: linear-gradient(180deg, #6E9CF5 0%, rgba(110, 156, 245, 0.00) 100%);
+    border: 1px solid #E8EDF5;
+    margin: 0 auto; /* Centrar el calendario horizontalmente */
+    max-width: 400px; /* Ajustar el ancho máximo del calendario */
+  }
+  
+  /* Estilos para los días de la semana */
+  .react-calendar__month-view__weekdays__weekday {
+    font-weight: bold;
+    color: #333;
+  }
+  
+  /* Estilos para los días de la semana en la cabecera */
+  .react-calendar__month-view__days__day--weekend {
+    color: rgb(37, 11, 95);
+  }
+  
+  /* Estilos para los días del calendario */
+  .react-calendar__tile--now {
+    background: rgba(110, 156, 245, 0.2);
+  }
+  
+  /* Estilos para los emojis en las casillas del calendario */
+  .emojiTile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+  }

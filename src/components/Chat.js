@@ -42,10 +42,18 @@ export default function Chat () {
 
       <form onSubmit={onSubmit} className={styles.container} >
 
+ {result && (
+          <p className="text-xl font-bold text-white max-w-xs my-10">
+            {result}
+          </p>
+        )}
+      <div className={styles.messageContainer}>
+
+      
       <input
           type="text"
           name="mensaje"
-          placeholder="Escriba su msj"
+          placeholder="Escriba su mensaje"
           onChange={(e) => setPrompt(e.target.value)}
           className="p-2 rounded-md block bg-neutral-700 text-white w-full"
           value={prompt}
@@ -55,12 +63,8 @@ export default function Chat () {
         <button type="submit" className="bg-green-500 p-2 rounded-md block mt-2 disabled:opacity-50 text-white" disabled={!prompt || loading}>
           Enviar
         </button>
-
-        {result && (
-          <p className="text-xl font-bold text-white max-w-xs my-10">
-            {result}
-          </p>
-        )}
+</div>
+       
       </form>
     </div> 
  )  

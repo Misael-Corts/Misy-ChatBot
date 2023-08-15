@@ -30,8 +30,8 @@ export async function POST (request) {
                      {role: "assistant", content: 'Espero que hoy te sientas muy bien'}
 
         ],
-          temperature: 0.6,
-          max_tokens: 50,
+          temperature: 0.7,
+          max_tokens: 60,
           top_p: 1,
           frequency_penalty: 1,
           presence_penalty: 1,
