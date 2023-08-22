@@ -1,7 +1,8 @@
 'use client' //para que no sea procesada en el servidor
 import { useState } from "react"
 import styles from '@/styles/chat.module.css'
-
+import Image from "next/image";
+import Logo from "../../public/img/MISI-removebg-preview 1.png";
 
 export default function Chat () {
     const [prompt, setPrompt] = useState ("") //lo que el usuario escribe o pregunta
@@ -40,18 +41,31 @@ export default function Chat () {
  return (
  <div className={styles.main}>
 
-
+  
 
  <div className={styles.chatContainer}>
 
- 
+  <Image
+          src={Logo}
+          className={styles.imageLogo}
+        />
+
+
+    <form onSubmit={onSubmit} className={styles.formContainer} >
+  
+
+    <div className={styles.chatMessages}>
+
+
+
     {result && (
           <p className="text-xl font-bold text-white max-w-xs my-10">
             {result}
           </p>
         )}
-
-      <form onSubmit={onSubmit} className={styles.formContainer} >
+</div>
+      
+   <div className={styles.chatUser}>
 
       <input
           type="text"
@@ -66,6 +80,9 @@ export default function Chat () {
         <button type="submit" className={styles.sendButton} disabled={!prompt || loading}>
           Enviar
         </button>
+          
+   </div>
+
       </form>
       
       </div>
