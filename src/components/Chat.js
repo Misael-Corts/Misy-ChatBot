@@ -3,6 +3,7 @@ import { useState } from "react"
 import styles from '@/styles/chat.module.css'
 import Image from "next/image";
 import Logo from "../../public/img/MISI-removebg-preview 1.png";
+import logoMsg from "../../public/img/MISI.png";
 
 export default function Chat () {
     const [prompt, setPrompt] = useState ("") //lo que el usuario escribe o pregunta
@@ -45,9 +46,8 @@ export default function Chat () {
 
  <div className={styles.chatContainer}>
 
-  <Image
+  <Image width={300}
           src={Logo}
-          className={styles.imageLogo}
         />
 
 
@@ -55,14 +55,22 @@ export default function Chat () {
   
 
     <div className={styles.chatMessages}>
-
-
-
-    {result && (
-          <p className="text-xl font-bold text-white max-w-xs my-10">
+ 
+      {result && (
+        <div className={styles.botMessage}>
+          <div className={styles.botAvatar}>
+            <Image
+              width={65}
+              height={65}
+              src={logoMsg}
+              alt="Misy"
+            />
+          </div>
+          <p className={styles.botText}>
             {result}
           </p>
-        )}
+        </div>
+      )}
 </div>
       
    <div className={styles.chatUser}>
@@ -76,7 +84,7 @@ export default function Chat () {
           value={prompt}
           autoFocus
         />
-
+          
         <button type="submit" className={styles.sendButton} disabled={!prompt || loading}>
           Enviar
         </button>
