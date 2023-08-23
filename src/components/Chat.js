@@ -1,7 +1,9 @@
 'use client' //para que no sea procesada en el servidor
 import { useState } from "react"
 import styles from '@/styles/chat.module.css'
-
+import Image from "next/image";
+import Logo from "../../public/img/MISI-removebg-preview 1.png";
+import logoMsg from "../../public/img/MISI.png";
 
 export default function Chat () {
     const [prompt, setPrompt] = useState ("") //lo que el usuario escribe o pregunta
@@ -40,18 +42,38 @@ export default function Chat () {
  return (
  <div className={styles.main}>
 
-
+  
 
  <div className={styles.chatContainer}>
 
+  <Image width={300}
+          src={Logo}
+        />
+
+
+    <form onSubmit={onSubmit} className={styles.formContainer} >
+  
+
+    <div className={styles.chatMessages}>
  
-    {result && (
-          <p className="text-xl font-bold text-white max-w-xs my-10">
+      {result && (
+        <div className={styles.botMessage}>
+          <div className={styles.botAvatar}>
+            <Image
+              width={65}
+              height={65}
+              src={logoMsg}
+              alt="Misy"
+            />
+          </div>
+          <p className={styles.botText}>
             {result}
           </p>
-        )}
-
-      <form onSubmit={onSubmit} className={styles.formContainer} >
+        </div>
+      )}
+</div>
+      
+   <div className={styles.chatUser}>
 
  {result && (
           <p className="text-xl font-bold text-white max-w-xs my-10">
@@ -71,10 +93,13 @@ export default function Chat () {
           value={prompt}
           autoFocus
         />
-
+          
         <button type="submit" className={styles.sendButton} disabled={!prompt || loading}>
           Enviar
         </button>
+          
+   </div>
+
       </form>
       
       </div>
