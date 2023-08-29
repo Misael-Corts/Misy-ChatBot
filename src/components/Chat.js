@@ -75,15 +75,6 @@ export default function Chat () {
       
    <div className={styles.chatUser}>
 
- {result && (
-          <p className="text-xl font-bold text-white max-w-xs my-10">
-            {result}
-          </p>
-        )}
-
-      <div className={styles.messageContainer}>
-
-      </div> 
       <input
           type="text"
           name="mensaje"

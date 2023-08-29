@@ -1,0 +1,27 @@
+.footer {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+
+  .footerLefth{
+    color: #fff;
+  }
+
+  .footerRight{
+    display: flex;
+  }
+  
+  /* Estilos para los íconos */
+  .icon {
+    color: #fff; /* Color blanco para los íconos */
+    font-size: 48px;
+    margin: 0 10px;
+    text-decoration: none;
+    transition: color 0.3s ease; /* Transición suave del color */
+  }
+  
+  .icon:hover {
+    color: #007BFF; /* Cambio de color al hacer hover */
+  }

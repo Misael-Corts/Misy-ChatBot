@@ -9,6 +9,12 @@
   line-height: normal;
 }
 
+.mainContainer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 /* Estilos para el calendario */
 .customCalendar {
     background: linear-gradient(180deg, #6E9CF5 0%, rgba(110, 156, 245, 0.00) 100%);

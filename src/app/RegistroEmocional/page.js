@@ -45,8 +45,7 @@ export default function RegistroEmocionalPageClient() {
     };
 
     return (
-        <div>
-            <h1 className={styles.title}>MI REGISTRO EMOCIONAL</h1>
+        <div className={styles.mainContainer}>
             <div className={`${styles.calendarContainer} ${styles.transparentCalendar}`}>
                 <Calendar
                     onChange={handleDateChange}
