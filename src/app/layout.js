@@ -15,12 +15,12 @@ export default function RootLayout({ children }) {
     
       <body>
 
-      <Menu />
+      {/* <Menu /> */}
 
 
         {children}
 
-        <Footer/>
+        {/* <Footer/> */}
         
         </body>
     </html>

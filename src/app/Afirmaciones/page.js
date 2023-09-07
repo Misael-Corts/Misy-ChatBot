@@ -4,6 +4,7 @@ import { useState } from 'react'; // Importa useState
 import styles from '@/styles/afirmaciones.module.css'
 import Image from "next/image";
 import Logo from "../../../public/img/MISI-removebg-preview 1.png";
+import Layout from '@/components/Layout';
 
 const affirmationsList = [
   "Hoy será un día increíble.",
@@ -25,6 +26,7 @@ export default function AfirmacionesPage () {
   };
 
   return (
+<Layout> 
     <div className={styles.mainContainer}>
       <Image width={300} src={Logo} />
 
@@ -36,6 +38,7 @@ export default function AfirmacionesPage () {
         </button>
       </form>
     </div>
+    </Layout>
   );
 }
 
