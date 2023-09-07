@@ -40,8 +40,8 @@ export default function RegistroEmocionalPageClient() {
         borderWidth: '1px',
         borderColor: '#E8EDF5',
         margin: '0 auto', // Centrar el calendario horizontalmente
-        width: '100%', // Ajustar el ancho al 100% del contenedor
-        height: '48px', // Ajustar la altura al mismo tamaño que el título
+        width: '200%', // Ajustar el ancho al 100% del contenedor
+        height: '96px', // Ajustar la altura al mismo tamaño que el título
     };
 
     return (
