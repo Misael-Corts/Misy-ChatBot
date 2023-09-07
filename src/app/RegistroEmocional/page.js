@@ -4,8 +4,10 @@ import { useState } from "react"
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
 import styles from '@/styles/registroEmocional.module.css';
+import Layout from "@/components/Layout";
 
 export default function RegistroEmocionalPageClient() {
+  
     const [selectedDate, setSelectedDate] = useState(new Date());
     const [selectedEmotion, setSelectedEmotion] = useState('');
     const [emojiDates, setEmojiDates] = useState({});
@@ -45,6 +47,7 @@ export default function RegistroEmocionalPageClient() {
     };
 
     return (
+        <Layout>
         <div className={styles.mainContainer}>
             <div className={`${styles.calendarContainer} ${styles.transparentCalendar}`}>
                 <Calendar
@@ -71,5 +74,8 @@ export default function RegistroEmocionalPageClient() {
                 </div>
             </div>
         </div>
+        </Layout>
+        
+
     );
 }
