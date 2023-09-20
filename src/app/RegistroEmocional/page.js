@@ -55,7 +55,7 @@ export default function RegistroEmocionalPageClient() {
                     value={selectedDate}
                     tileContent={customTileContent}
                     className={styles.customCalendar}
-                    calendarType="US"
+                    calendarType="gregory"
                     style={calendarStyles} // Aplicar estilos personalizados al calendario
                 />
             </div>

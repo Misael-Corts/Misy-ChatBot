@@ -20,7 +20,8 @@
     background: linear-gradient(180deg, #6E9CF5 0%, rgba(110, 156, 245, 0.00) 100%);
     border: 1px solid #E8EDF5;
     margin: 0 auto; /* Centrar el calendario horizontalmente */
-    max-width: 400px; /* Ajustar el ancho máximo del calendario */
+    width: 100%;
+    /* max-width: 400px; Ajustar el ancho máximo del calendario */
   }
   
   /* Estilos para los días de la semana */
