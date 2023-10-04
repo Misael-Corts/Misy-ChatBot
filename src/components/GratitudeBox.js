@@ -1,6 +1,9 @@
 'use client' // Para que no sea procesada en el servidor
 import React, { useState, useEffect } from 'react'; 
 import styles from '@/styles/diario.module.css';
+import Image from "next/image";
+import logoBaul from "../../public/img/gratitudeBox.png";
+
 
 const GratitudeBox = () => {
   const [notes, setNotes] = useState([]);
@@ -48,27 +51,43 @@ const GratitudeBox = () => {
 
   return (
     <div className={styles.container}>
-      <h1>Baúl de Gratitud</h1>
-      <div>
+
+
+      <div className={styles.containerTitle}>
+      <h1 className={styles.title}>Baúl de Gratitud</h1>
+      <Image width={200}
+          src={logoBaul}
+        />
+      </div>
+
+
+
+      <div className={styles.cardContainer}>
+        {notes.map((note, index) => (
+          <div className={styles.notitaContainer}>
+          <div className={styles.boxContainer} key={index}>
+            <div>
+              <p className={styles.textStyle}>{note}</p>  
+            </div>    
+          </div>
+              <button onClick={() => deleteNote(index)}>Eliminar</button>
+              <button onClick={() => editNote(index)}>Editar</button>
+          </div>
+        ))}
+      </div>
+      
+   <div className={styles.notaContainer}>
         <input
           type="text"
           placeholder="Escribe una nota de gratitud..."
           value={newNote}
+          className={styles.input}
           onChange={(e) => setNewNote(e.target.value)}
         />
-        <button onClick={addNote}>{editingIndex !== null ? 'Editar' : 'Guardar'}</button>
+        <button className={styles.sendButton} onClick={addNote}>{editingIndex !== null ? 'Editar' : 'Guardar'}</button>
       </div>
-      <div>
-        {notes.map((note, index) => (
-          <div className={styles.boxContainer} key={index}>
-            <div className={styles.formContainer}>
-              <p>{note}</p>
-              <button onClick={() => deleteNote(index)}>Eliminar</button>
-              <button onClick={() => editNote(index)}>Editar</button>
-            </div>
-          </div>
-        ))}
-      </div>
+
+
     </div>
   );
 };

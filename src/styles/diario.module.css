@@ -1,14 +1,5 @@
 /* Estilos para el componente GratitudeBox */
 .container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh; 
-  text-align: center; 
-}
-
-.formContainer {
   width: 100%;
   max-width: 900px;
   height: 600px;
@@ -32,10 +23,70 @@
   background-color: #fff;
   padding: 10px;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
-  position: relative;
+  position: relative; 
 }
 
+.cardContainer{
+  display: flex;
+}
 
+.notitaContainer{
+  display: flex;
+  flex-direction: column;
+}
+
+.mainContainer {
+    align-items: center;
+    display: flex;
+}
+
+.containerTitle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.title{
+  color: #FFF;
+font-family: Roboto Mono;
+font-size: 40px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+}
+
+.notaContainer {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  }
+  
+
+.sendButton {
+  background: #007BFF;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 15px;
+  cursor: pointer;
+}
+
+.input {
+  flex: 1;
+  padding: 8px;
+  border: none;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+/* 
+.textStyle{
+  color: #FFF;
+font-family: Roboto Mono;
+font-size: 30px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+} */
 
 
   
