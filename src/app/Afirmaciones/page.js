@@ -19,7 +19,8 @@ const affirmationsList = [
 ];
 
 export default function AfirmacionesPage () {
-  const [currentAffirmation, setCurrentAffirmation] = useState('');
+  const ramdomAffimation = Math.floor(Math.random() * affirmationsList.length)
+  const [currentAffirmation, setCurrentAffirmation] = useState(affirmationsList[ramdomAffimation]);
 
   const getRandomAffirmation = () => {
     const randomIndex = Math.floor(Math.random() * affirmationsList.length);

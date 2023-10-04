@@ -49,7 +49,7 @@ export default function RegistroEmocionalPageClient() {
     return (
         <Layout>
         <div className={styles.mainContainer}>
-            <div className={`${styles.calendarContainer} ${styles.transparentCalendar}`}>
+            <div>
                 <Calendar
                     onChange={handleDateChange}
                     value={selectedDate}
