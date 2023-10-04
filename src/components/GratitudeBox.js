@@ -1,11 +1,26 @@
-'use client' //para que no sea procesada en el servidor
-import { useState } from "react"
-import styles from '@/styles/diario.module.css'; // Importar los estilos desde diario.module.css
+'use client' // Para que no sea procesada en el servidor
+import React, { useState, useEffect } from 'react'; 
+import styles from '@/styles/diario.module.css';
 
 const GratitudeBox = () => {
   const [notes, setNotes] = useState([]);
   const [newNote, setNewNote] = useState('');
   const [editingIndex, setEditingIndex] = useState(null);
+
+  // Cargar notas almacenadas en localStorage al cargar la página
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const savedNotes = JSON.parse(localStorage.getItem('gratitudeNotes') || '[]');
+      setNotes(savedNotes);
+    }
+  }, []);
+
+  // Guardar notas en localStorage cuando cambian
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('gratitudeNotes', JSON.stringify(notes));
+    }
+  }, [notes]);
 
   const addNote = () => {
     if (newNote.trim() === '') return;
@@ -32,7 +47,7 @@ const GratitudeBox = () => {
   };
 
   return (
-    <div className={styles.container}> {/* Usar el estilo desde diario.module.css */}
+    <div className={styles.container}>
       <h1>Baúl de Gratitud</h1>
       <div>
         <input
@@ -45,8 +60,8 @@ const GratitudeBox = () => {
       </div>
       <div>
         {notes.map((note, index) => (
-          <div className={styles.boxContainer} key={index}> {/* Usar el estilo desde diario.module.css */}
-            <div className={styles.formContainer}> {/* Usar el estilo desde diario.module.css */}
+          <div className={styles.boxContainer} key={index}>
+            <div className={styles.formContainer}>
               <p>{note}</p>
               <button onClick={() => deleteNote(index)}>Eliminar</button>
               <button onClick={() => editNote(index)}>Editar</button>
