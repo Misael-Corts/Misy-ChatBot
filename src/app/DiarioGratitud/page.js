@@ -1,22 +1,23 @@
-import styles from '@/styles/diario.module.css'
-import Image from "next/image";
-import Logo from "../../../public/img/MISI-removebg-preview 1.png";
+import React from 'react';
+import Image from 'next/image';
 import Layout from '@/components/Layout';
+import GratitudeBox from '@/components/GratitudeBox';
+import styles from '@/styles/diario.module.css'; // Importar los estilos desde diario.module.css
 
-export default function DiarioGratitudPage () {
-    return (
-        <Layout>
+const DiarioGratitudPage = () => {
+  return (
+    <Layout>
+      <div className={styles.mainContainer}> {/* Usar el estilo desde diario.module.css */}
+        <Image
+          src="/img/MISI-removebg-preview 1.png"
+          alt="Logo"
+          width={300}
+          height={150}
+        />
+        <GratitudeBox />
+      </div>
+    </Layout>
+  );
+};
 
-      
-        <div className={styles.mainContainer}>
-
-        <Image width={300}
-                src={Logo}
-              />
-          <form className={styles.formContainer}>
-      </form>
-      
-              </div>
-         </Layout>       
-    )
-}
+export default DiarioGratitudPage;

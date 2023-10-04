@@ -1,21 +1,41 @@
-.formContainer {
-    width: 100%;
-    max-width: 900px;
-    height: 600px;
-    flex-shrink: 0;
-    border-radius: 50px;
-    border: 1px solid #000;
-    background: #0e1a47;
-    /* margin: 0 auto; */
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 30px;
-  }
+/* Estilos para el componente GratitudeBox */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh; 
+  text-align: center; 
+}
 
-  .mainContainer {
-    display: flex;
-    align-items: center;
-   }
-  
+.formContainer {
+  width: 100%;
+  max-width: 900px;
+  height: 600px;
+  flex-shrink: 0;
+  border-radius: 50px;
+  border: 1px solid #000;
+  background: #0e1a47;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 30px;
+}
+
+.boxContainer {
+  display: inline-block;
+  margin: 10px;
+  cursor: pointer;
+  width: 200px;
+  height: 200px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  padding: 10px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+
+
+
   
