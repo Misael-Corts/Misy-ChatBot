@@ -1,10 +1,11 @@
 'use client'
 import { useState } from 'react'; // Importa useState
-
 import styles from '@/styles/afirmaciones.module.css'
 import Image from "next/image";
 import Logo from "../../../public/img/MISI-removebg-preview 1.png";
 import Layout from '@/components/Layout';
+import afirmationLogo from "../../../public/img/Afirmacion_hoy.png";
+
 
 const affirmationsList = [
   "Hoy será un día increíble.",
@@ -31,9 +32,15 @@ export default function AfirmacionesPage () {
       <Image width={300} src={Logo} />
 
       <form className={styles.formContainer}>
-        <h1>Afirmación Diaria </h1>
-        <p>{currentAffirmation}</p>
-        <button type="button" onClick={getRandomAffirmation}>
+
+        <div className={styles.containerAffirmations}>
+          <p className={styles.affirmationText}>"{currentAffirmation}"</p>
+           <Image width={200} src={afirmationLogo} />
+
+        </div>
+
+
+        <button className={styles.btnGenerate} type="button" onClick={getRandomAffirmation}>
           Generar Afirmación
         </button>
       </form>
