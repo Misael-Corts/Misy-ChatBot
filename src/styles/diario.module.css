@@ -2,7 +2,7 @@
 .container {
   width: 100%;
   max-width: 900px;
-  height: 600px;
+  /* height: 600px; */
   flex-shrink: 0;
   border-radius: 50px;
   border: 1px solid #000;
@@ -10,29 +10,31 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 30px;
+  padding: 0px 30px 30px 30px;
 }
 
 .boxContainer {
-  display: inline-block;
-  margin: 10px;
-  cursor: pointer;
-  width: 200px;
-  height: 200px;
-  border: 1px solid #ccc;
-  background-color: #fff;
-  padding: 10px;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
-  position: relative; 
+  width: 400px;
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  margin-bottom: 20px;
+  margin-left: 10px;
+  border-radius: 30px;
+  background: linear-gradient(180deg, #3953AE 0%, rgba(29, 50, 125, 0.00) 100%);
 }
+
 
 .cardContainer{
   display: flex;
+  flex-wrap: wrap;
 }
 
 .notitaContainer{
   display: flex;
-  flex-direction: column;
+  flex-direction: column; 
 }
 
 .mainContainer {
@@ -78,15 +80,21 @@ line-height: normal;
   border-radius: 5px;
   margin-right: 10px;
 }
-/* 
+
 .textStyle{
-  color: #FFF;
+color: #FFF;
 font-family: Roboto Mono;
-font-size: 30px;
-font-style: normal;
+font-size: 20px;
 font-weight: 700;
-line-height: normal;
-} */
+/* padding: 15px; */
+/* font-style: normal; */
+/* line-height: normal; */
+}
+
+.btnContainer{
+  display: flex;
+  flex-direction: column;
+}
 
 
   

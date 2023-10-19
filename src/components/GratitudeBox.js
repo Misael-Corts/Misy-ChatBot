@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import styles from '@/styles/diario.module.css';
 import Image from "next/image";
 import logoBaul from "../../public/img/gratitudeBox.png";
+import { FaRegTrashAlt, FaEdit } from "react-icons/fa";
 
 
 const GratitudeBox = () => {
@@ -52,10 +53,9 @@ const GratitudeBox = () => {
   return (
     <div className={styles.container}>
 
-
       <div className={styles.containerTitle}>
       <h1 className={styles.title}>Baúl de Gratitud</h1>
-      <Image width={200}
+      <Image width={150}
           src={logoBaul}
         />
       </div>
@@ -65,17 +65,18 @@ const GratitudeBox = () => {
       <div className={styles.cardContainer}>
         {notes.map((note, index) => (
           <div className={styles.notitaContainer}>
-          <div className={styles.boxContainer} key={index}>
-            <div>
-              <p className={styles.textStyle}>{note}</p>  
-            </div>    
-          </div>
+          <div className={styles.boxContainer} key={index}>      
+              <p className={styles.textStyle}>{note}</p>     
+          <div className={styles.btnContainer}>
               <button onClick={() => deleteNote(index)}>Eliminar</button>
               <button onClick={() => editNote(index)}>Editar</button>
+          </div>
+          </div>
           </div>
         ))}
       </div>
       
+       
    <div className={styles.notaContainer}>
         <input
           type="text"
