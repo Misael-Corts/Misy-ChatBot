@@ -1,53 +1,63 @@
 .formContainer {
-    width: 100%;
-    max-width: 900px;
-    height: 600px;
-    flex-shrink: 0;
-    border-radius: 50px;
-    border: 1px solid #000;
-    background: #0e1a47;
-    /* margin: 0 auto; */
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 30px;
-  }
+  width: 100%;
+  max-width: 900px;
+  /* height: 600px; */
+  flex-shrink: 0;
+  border-radius: 50px;
+  border: 1px solid #000;
+  background: #0e1a47;
+  /* margin: 0 auto; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 30px;
+}
 
-  .mainContainer {
-    display: flex;
-    align-items: center;
-   }
+.mainContainer {
+  display: flex;
+  align-items: center;
+}
 
-   .containerEjercicio1 {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-   }
+.containerEjercicio {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 
-   .containerEjercicio2 {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-   }
+.ejercicio {
+  width: 450px;
+  height: 80px;
+  /* flex-shrink: 0;  */
+  border-radius: 30px;
+  background: linear-gradient(180deg, #3953AE 0%, rgba(29, 50, 125, 0.00) 100%);
+  /* display: flex; */
+  /* align-items: center; */
+}
 
-   .ejercicio {
-    width: 490px;
-    height: 90px;
-    flex-shrink: 0; 
-    border-radius: 30px;
-    background: linear-gradient(180deg, #3953AE 0%, rgba(29, 50, 125, 0.00) 100%);
-   }
+.textStyle {
+  color: #FFF;
+  font-family: Roboto Mono;
+  font-size: 30px;
+  /* font-style: normal; */
+  font-weight: 700;
+  /* line-height: normal; */
+  text-align: center;
+  /* margin-top: 20px; */
+}
 
-   .textStyle {
-    color: #FFF;
-    font-family: Roboto Mono;
-    font-size: 30px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    text-align: center;
-    margin-top: 20px;
-   }
-   
-  
-  
+.closeButton {
+  background: #3953AE;
+  color: #fff;
+  border-radius: 5px;
+  padding: 8px 15px;
+}
+
+.textModal {
+  margin-top: 10px;
+}
+
+.imagenContainer {
+  display: flex;
+  justify-content: center;
+  /* width: 80%; */
+}

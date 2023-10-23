@@ -1,6 +1,6 @@
-import Menu from '@/components/Menu'
-import Footer from '@/components/Footer'
+'use client'
 import './globals.css'
+import { useEffect } from 'react'
 
 
 export const metadata = {
@@ -9,6 +9,14 @@ export const metadata = {
 }
 
 export default function RootLayout({ children }) {
+
+  useEffect(() => {
+    if(typeof window !== "undefined"){
+      require('bootstrap/dist/js/bootstrap.min.js')
+    }
+  },[])
+
+
   return (
     
     <html lang="en">

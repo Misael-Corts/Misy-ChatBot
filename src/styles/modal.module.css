@@ -1,0 +1,27 @@
+.ejercicio {
+  width: 450px;
+  height: 80px;
+  /* flex-shrink: 0;  */
+  border-radius: 30px;
+  background: linear-gradient(180deg, #3953AE 0%, rgba(29, 50, 125, 0.00) 100%);
+  /* display: flex; */
+  /* align-items: center; */
+ }
+
+ .textStyle {
+  color: #FFF;
+  font-family: Roboto Mono;
+  font-size: 30px;
+  /* font-style: normal; */
+  font-weight: 700;
+  /* line-height: normal; */
+  text-align: center;
+  /* margin-top: 20px; */
+ }
+ 
+ .closeButton{
+  background: #3953AE;
+  color: #fff;
+  border-radius: 5px;
+  padding: 8px 15px;
+ }
