@@ -16,9 +16,10 @@
 
 /* Estilos para el calendario */
 .customCalendar {
-    background: linear-gradient(180deg, #6E9CF5 0%, rgba(110, 156, 245, 0.00) 100%);
-    border: 1px solid #E8EDF5;
-    margin: 0 auto; /* Centrar el calendario horizontalmente */
+    /* background: linear-gradient(180deg, #6E9CF5 0%, rgba(110, 156, 245, 0.00) 100%); */
+    background: linear-gradient(180deg, #3576f7 0%, rgba(110, 156, 245, 0.00) 100%);
+    /* border: 1px solid #E8EDF5; */
+    /* margin: 0 auto; Centrar el calendario horizontalmente */
     width: 80%;
     /* max-width: 400px; Ajustar el ancho máximo del calendario */
   }
