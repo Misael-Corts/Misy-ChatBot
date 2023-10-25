@@ -11,7 +11,7 @@ export default function Modal ({ejerciciosModal}) {
         <div  key={index}> 
         <b>{element.title}</b>
         <p>{element.text}</p>
-        {element.image ? <div>{element.image}</div> : null}
+        {/* {element.image ? <div>{element.image}</div> : null} */}
         {/* //por las dudas podemos agregar ternario si queremos poner una imgaen o algo xd */}
         <br />
         </div>
