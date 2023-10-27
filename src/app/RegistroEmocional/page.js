@@ -91,7 +91,7 @@ export default function RegistroEmocionalPageClient() {
                     <button onClick={() => handleEmotionSelect('😢')} className={styles.emotionButton}>
                         😢
                     </button>
-                    <button onClick={() => deleteEmoji()}>Eliminar</button>
+                    <button onClick={() => deleteEmoji()} className={styles.btnEliminar}>Borrar</button>
 
                     {/* Agrega más botones con emojis de emociones según sea necesario */}
                 </div>

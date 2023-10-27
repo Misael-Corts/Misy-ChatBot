@@ -53,5 +53,15 @@
   }
 
   .emotionSelector{
-    border: 1px solid red;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+  }
+
+  .btnEliminar{
+    background: #3953AE;
+    color: #fff;
+    border-radius: 5px;
+    padding: 8px 15px;
   }
