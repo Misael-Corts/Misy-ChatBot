@@ -4,6 +4,8 @@ import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
 import styles from '@/styles/registroEmocional.module.css';
 import Layout from "@/components/Layout";
+import { FaRegTimesCircle } from "react-icons/fa";
+
 
 export default function RegistroEmocionalPageClient() {
 
@@ -91,7 +93,7 @@ export default function RegistroEmocionalPageClient() {
                     <button onClick={() => handleEmotionSelect('😢')} className={styles.emotionButton}>
                         😢
                     </button>
-                    <button onClick={() => deleteEmoji()} className={styles.btnEliminar}>Borrar</button>
+                    <button onClick={() => deleteEmoji()} className={styles.btnEliminar}><FaRegTimesCircle /></button>
 
                     {/* Agrega más botones con emojis de emociones según sea necesario */}
                 </div>
