@@ -10,6 +10,7 @@ import panico from "../../../public/img/tecnica5sentidos.jpg";
 import Layout from '@/components/Layout';
 import { FaRegTimesCircle } from "react-icons/fa";
 import Modal from '@/components/Modal';
+import ReactPlayer from 'react-player/youtube'
 
 export default function EspacioRelajacionPage() {
 
@@ -146,21 +147,24 @@ export default function EspacioRelajacionPage() {
     modalTitle: 'Aqui tienes 10 actividades que ayudan a relajar la mente',
     buttonEjercicio: 'Relaja tu mente',
     ejercicios: relajaTuMente,
-    image: LogoEjercicio1
+    image: LogoEjercicio1,
+    video_url: "https://www.youtube.com/watch?v=jItvR_X3NME"
   },
   {
     modalTitle: 'Aqui tienes 10 ejercicios para calmar la ansiedad',
     buttonEjercicio: 'Calma tu ansiedad',
     ejercicios: relajaAnsiedad,
     image: LogoEjercicio2,
-    imagenEjercicio: calma
+    // imagenEjercicio: calma,
+    video_url: `https://www.youtube.com/watch?v=qd9lmvDkJOQ`
   },
   {
     modalTitle: 'Aqui tienes 10 maneras de detener un ataque de pánico',
     buttonEjercicio: 'Combate los ataques de pánico',
     ejercicios: ataquePanico,
     image: LogoEjercicio3,
-    imagenEjercicio: panico
+    // imagenEjercicio: panico,
+    video_url: `https://www.youtube.com/watch?v=NHBqkLlujiE`
   }
   ]
 
@@ -191,6 +195,7 @@ export default function EspacioRelajacionPage() {
                     <div className="modal-body">
                       <Modal ejerciciosModal={element.ejercicios} />
                       {element.imagenEjercicio ? <div className={styles.imagenContainer}><Image width={500} src={element.imagenEjercicio} /></div> : null}
+                      {element.video_url ? <div className={styles.videoContainer}><ReactPlayer url={element.video_url}/></div> : null}
                     </div>
                     <div className="modal-footer">
                       <button type="button" className={styles.closeButton} data-bs-dismiss="modal">Cerrar</button>
