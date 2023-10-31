@@ -68,8 +68,8 @@ const GratitudeBox = () => {
           <div className={styles.boxContainer} key={index}>      
               <p className={styles.textStyle}>{note}</p>     
           <div className={styles.btnContainer}>
-              <button onClick={() => deleteNote(index)}>Eliminar</button>
-              <button onClick={() => editNote(index)}>Editar</button>
+              <button onClick={() => deleteNote(index)}><FaRegTrashAlt  className={styles.icons} /></button>
+              <button onClick={() => editNote(index)}><FaEdit className={styles.icons}/></button>
           </div>
           </div>
           </div>
