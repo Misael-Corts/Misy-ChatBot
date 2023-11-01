@@ -3,11 +3,14 @@ import { useState } from "react"
 import styles from '@/styles/chat.module.css'
 import Image from "next/image";
 import Logo from "../../public/img/MISI-removebg-preview 1.png";
+import user from "../../public/img/userInvitado.png";
 import logoMsg from "../../public/img/MISI.png";
+import TypingAnimation from "./TypingAnimation";
 
 export default function Chat () {
     const [prompt, setPrompt] = useState ("") //lo que el usuario escribe o pregunta
     const [result, setResult] = useState();
+    const [chatLog, setChatLog] = useState([])
     const [loading, setLoading] = useState(false);
     
   
@@ -24,6 +27,8 @@ export default function Chat () {
   
       const data = await response.json() // convertir la respuesta a un json
       setResult(data);
+      setChatLog((prevChatLog) => [...prevChatLog, { type: 'bot', message: data }])
+
   
     } catch (error) {
       alert(error.message);
@@ -36,14 +41,14 @@ export default function Chat () {
   
   const onSubmit = async (e) => { //No se reinicie la pagina cada vez que se envie el formulario
       e.preventDefault()
-      generateMessage(prompt)
+      setChatLog((prevChatLog) => [...prevChatLog, { type: 'user', message: prompt }]);
+      generateMessage(prompt);
+      setPrompt('');
     }
 
+    console.log('aquie chatlog => ',chatLog);
+
  return (
- <div className={styles.main}>
-
-  
-
  <div className={styles.chatContainer}>
 
   <Image width={300}
@@ -51,28 +56,54 @@ export default function Chat () {
         />
 
 
-    <form onSubmit={onSubmit} className={styles.formContainer} >
-  
+   
+  <div className={styles.prueba}>
 
     <div className={styles.chatMessages}>
  
-      {result && (
-        <div className={styles.botMessage}>
-          <div className={styles.botAvatar}>
-            <Image
-              width={65}
-              height={65}
-              src={logoMsg}
-              alt="Misy"
-            />
-          </div>
-          <p className={styles.botText}>
-            {result}
-          </p>
-        </div>
+      {result && (   
+           <div>
+           {
+            chatLog.map((message, index) => (
+        <div key={index} className={`flex ${
+          message.type === 'bot' ? 'flex-row items-center mt-3 mb-3' : 'flex-row-reverse items-center mt-3'
+          }`}>
+                <div className={`${message.type === 'bot' ? 'rounded-full overflow-hidden mr-2' : 'rounded-full overflow-hidden ml-2'}`}>
+                  <Image
+                    width={50}
+                    height={50}
+                    src={message.type === 'bot' ? logoMsg : user}
+                    alt="Misy"
+                    />
+                </div>
+                <p className={styles.botText}>
+                {/* {loading && message.type === 'bot' ? '...' : message.message} */}
+                {message.message}
+                </p>
+              </div> 
+            ))
+           }
+                {
+              loading &&
+              <div key={chatLog.length} className="flex justify-start">
+                  <div className={'rounded-full overflow-hidden mr-2'}>
+                  <Image
+                    width={50}
+                    height={50}
+                    src={logoMsg}
+                    alt="Misy"
+                    />
+                </div>
+                  <div className={styles.botText}>
+                    <TypingAnimation />
+                  </div>
+              </div>
+            }
+       </div> 
       )}
-</div>
-      
+    </div>
+    
+ <form onSubmit={onSubmit} className={styles.formContainer} >      
    <div className={styles.chatUser}>
 
       <input
@@ -88,13 +119,14 @@ export default function Chat () {
         <button type="submit" className={styles.sendButton} disabled={!prompt || loading}>
           Enviar
         </button>
-          
+   </div>
+   </form>
+
    </div>
 
-      </form>
+      
       
       </div>
-    </div> 
     
  )  
 }
