@@ -4,7 +4,7 @@
   max-width: 900px;
   /* height: 600px; */
   flex-shrink: 0;
-  border-radius: 50px;
+  border-radius: 20px;
   border: 1px solid #000;
   background: #0e1a47;
   display: flex;
@@ -20,8 +20,8 @@
   justify-content: space-between;
   align-items: center;
   padding: 20px;
-  margin-bottom: 20px;
-  margin-left: 10px;
+  /* margin-bottom: 20px;
+  margin-left: 10px; */
   border-radius: 30px;
   background: linear-gradient(180deg, #3953AE 0%, rgba(29, 50, 125, 0.00) 100%);
 }
@@ -30,6 +30,7 @@
 .cardContainer{
   display: flex;
   flex-wrap: wrap;
+  gap: 15px;
 }
 
 .notitaContainer{
